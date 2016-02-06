@@ -1,6 +1,6 @@
 var bio = {
     "name": "Anthony Jordan",
-    "role": "CSR",
+    "role": "Web Developer",
     "contacts": {
         "mobile": "330-565-8450",
         "email": "Anthony.K.Jordan@icloud.com",
@@ -15,13 +15,14 @@ var bio = {
     "bioPic": "images/face.jpg"
 };
 
-var name = "Anthony Jordan";
-var formattedName = HTMLheaderName.replace("%data%", name);
-$("#header").append(formattedName);
-
 var role = "Web Developer";
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-$("#header").append(formattedRole);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").prepend(formattedRole);
+
+var name = "Anthony Jordan";
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+$("#header").prepend(formattedName);
+
 
 var formattedbioMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#topContacts").append(formattedbioMobile);
@@ -72,9 +73,6 @@ $("#footerContacts").append(formattedbioTwitter);
 var formattedbioLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#footerContacts").append(formattedbioLocation);
 
-
-
-
 var education = {
     "schools": [{
         "name": "Bullitt Central High School",
@@ -82,7 +80,7 @@ var education = {
         "degree": "High School Diploma",
         "dates": "2006-2010",
         "url": "http://www.bullittschools.org/1/Home",
-        "major": "Required"
+        "major": "High School Diploma"
     }]
 };
 
