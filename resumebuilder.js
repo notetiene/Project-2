@@ -1,11 +1,3 @@
-var name = "Anthony Jordan";
-var formattedName = HTMLheaderName.replace("%data%", name);
-$("#header").append(formattedName);
-
-var role = "Web Developer";
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-$("#header").append(formattedRole);
-
 var bio = {
     "name": "Anthony Jordan",
     "role": "CSR",
@@ -23,20 +15,28 @@ var bio = {
     "bioPic": "images/face.jpg"
 };
 
+var name = "Anthony Jordan";
+var formattedName = HTMLheaderName.replace("%data%", name);
+$("#header").append(formattedName);
+
+var role = "Web Developer";
+var formattedRole = HTMLheaderRole.replace("%data%", role);
+$("#header").append(formattedRole);
+
 var formattedbioMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").prepend(formattedbioMobile);
+$("#topContacts").append(formattedbioMobile);
 
 var formattedbioEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").prepend(formattedbioEmail);
+$("#topContacts").append(formattedbioEmail);
 
 var formattedbioGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").prepend(formattedbioGithub);
+$("#topContacts").append(formattedbioGithub);
 
 var formattedbioTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#topContacts").prepend(formattedbioTwitter);
+$("#topContacts").append(formattedbioTwitter);
 
 var formattedbioLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").prepend(formattedbioLocation);
+$("#topContacts").append(formattedbioLocation);
 
 var formattedwelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").append(formattedwelcomeMessage);
@@ -71,8 +71,6 @@ $("#footerContacts").append(formattedbioTwitter);
 
 var formattedbioLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#footerContacts").append(formattedbioLocation);
-
-
 
 
 
