@@ -40,11 +40,13 @@ var work = {
         "employer": "AT&T",
         "title": "Customer Service Advisor",
         "dates": "August 2015 - Current",
+        "location": "Boardman, Ohio",
         "description": "Answer incoming customer phone calls."
     }, {
         "employer": "Geek Squad",
         "title": "Data Security CIA",
         "dates": "June 2014 - June 2015",
+        "location": "Brooks, KY",
         "description": "Collect client data, document and store client data."
     }]
 };
@@ -125,6 +127,9 @@ function displayWork() {
 
         var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
         $(".work-entry:last").append(formattedDates);
+
+        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+        $(".work-entry:last").append(formattedLocation);
 
         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
         $(".work-entry:last").append(formattedDescription);
