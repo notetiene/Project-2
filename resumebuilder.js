@@ -1,12 +1,10 @@
 var name = "Anthony Jordan";
 var formattedName = HTMLheaderName.replace("%data%", name);
+$("#header").append(formattedName);
 
 var role = "Web Developer";
 var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
+$("#header").append(formattedRole);
 
 var bio = {
     "name": "Anthony Jordan",
@@ -26,19 +24,19 @@ var bio = {
 };
 
 var formattedbioMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedbioMobile);
+$("#topContacts").prepend(formattedbioMobile);
 
 var formattedbioEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedbioEmail);
+$("#topContacts").prepend(formattedbioEmail);
 
 var formattedbioGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").append(formattedbioGithub);
+$("#topContacts").prepend(formattedbioGithub);
 
 var formattedbioTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#topContacts").append(formattedbioTwitter);
+$("#topContacts").prepend(formattedbioTwitter);
 
 var formattedbioLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedbioLocation);
+$("#topContacts").prepend(formattedbioLocation);
 
 var formattedwelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").append(formattedwelcomeMessage);
@@ -46,6 +44,18 @@ $("#header").append(formattedwelcomeMessage);
 var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 $("#header").append(formattedbioPic);
 
+if (bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+    $("#skills").append(formattedSkill);
+    formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+    $("#skills").append(formattedSkill);
+    formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+    $("#skills").append(formattedSkill);
+    formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+    $("#skills").append(formattedSkill);
+}
 
 var formattedbioMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#footerContacts").append(formattedbioMobile);
@@ -63,18 +73,8 @@ var formattedbioLocation = HTMLlocation.replace("%data%", bio.contacts.location)
 $("#footerContacts").append(formattedbioLocation);
 
 
-if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
 
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-    $("#skills").append(formattedSkill);
-}
+
 
 
 var education = {
@@ -83,7 +83,8 @@ var education = {
         "location": "Shepherdsville, KY",
         "degree": "High School Diploma",
         "dates": "2006-2010",
-        "url": "http://example.com"
+        "url": "http://www.bullittschools.org/1/Home",
+        "major": "Required"
     }]
 };
 
@@ -102,11 +103,13 @@ education.display = function() {
 
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
         $(".education-entry:last").append(formattedLocation);
+
+        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+        $(".education-entry:last").append(formattedMajor);
     }
 };
 
 education.display();
-
 
 var work = {
     "jobs": [{
