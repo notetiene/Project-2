@@ -25,44 +25,6 @@ var bio = {
     "bioPic": "images/face.jpg"
 };
 
-var education = {
-    "schools": [{
-        "name": "Bullitt Central High School",
-        "location": "Shepherdsville, KY",
-        "degree": "High School Diploma",
-        "dates": "2006-2010",
-        "url": "http://example.com"
-    }]
-};
-
-var work = {
-    "jobs": [{
-        "employer": "AT&T",
-        "title": "Customer Service Advisor",
-        "dates": "August 2015 - Current",
-        "location": "Boardman, Ohio",
-        "description": "Answer incoming customer phone calls."
-    }, {
-        "employer": "Geek Squad",
-        "title": "Data Security CIA",
-        "dates": "June 2014 - June 2015",
-        "location": "Brooks, KY",
-        "description": "Collect client data, document and store client data."
-    }]
-};
-
-var projects = {
-    "projects": [{
-        "title": "About Me",
-        "dates": "2015",
-        "description": "Website made to describe who I am as a person.",
-        "images": [
-            "https://placeimg.com/300/300/tech",
-            "https://placeimg.com/300/300/tech"
-        ]
-    }]
-};
-
 var formattedbioMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#topContacts").append(formattedbioMobile);
 
@@ -115,6 +77,52 @@ if (bio.skills.length > 0) {
 }
 
 
+var education = {
+    "schools": [{
+        "name": "Bullitt Central High School",
+        "location": "Shepherdsville, KY",
+        "degree": "High School Diploma",
+        "dates": "2006-2010",
+        "url": "http://example.com"
+    }]
+};
+
+education.display = function() {
+    for (school in education.schools) {
+        $("#education").append(HTMLschoolStart);
+
+        var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+        $(".education-entry:last").append(formattedName);
+
+        var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+        $(".education-entry:last").append(formattedDegree);
+
+        var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+        $(".education-entry:last").append(formattedDates);
+
+        var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+        $(".education-entry:last").append(formattedLocation);
+    }
+};
+
+education.display();
+
+
+var work = {
+    "jobs": [{
+        "employer": "AT&T",
+        "title": "Customer Service Advisor",
+        "dates": "August 2015 - Current",
+        "location": "Boardman, Ohio",
+        "description": "Answer incoming customer phone calls."
+    }, {
+        "employer": "Geek Squad",
+        "title": "Data Security CIA",
+        "dates": "June 2014 - June 2015",
+        "location": "Brooks, KY",
+        "description": "Collect client data, document and store client data."
+    }]
+};
 
 function displayWork() {
     for (job in work.jobs) {
@@ -137,6 +145,18 @@ function displayWork() {
 }
 
 displayWork();
+
+var projects = {
+    "projects": [{
+        "title": "About Me",
+        "dates": "2015",
+        "description": "Website made to describe who I am as a person.",
+        "images": [
+            "https://placeimg.com/300/300/tech",
+            "https://placeimg.com/300/300/tech"
+        ]
+    }]
+};
 
 projects.display = function() {
     for (project in projects.projects) {
@@ -161,26 +181,6 @@ projects.display = function() {
 };
 
 projects.display();
-
-education.display = function() {
-    for (school in education.schools) {
-        $("#education").append(HTMLschoolStart);
-
-        var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
-        $(".education-entry:last").append(formattedName);
-
-        var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-        $(".education-entry:last").append(formattedDegree);
-
-        var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-        $(".education-entry:last").append(formattedDates);
-
-        var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-        $(".education-entry:last").append(formattedLocation);
-    }
-};
-
-education.display();
 
 $("#mapDiv").append(googleMap);
 
