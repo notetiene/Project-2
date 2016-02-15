@@ -16,13 +16,14 @@ var bio = {
 };
 
 var role = "Web Developer";
+
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 
 var name = "Anthony Jordan";
+
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 $("#header").prepend(formattedName);
-
 
 var formattedbioMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#topContacts").append(formattedbioMobile);
@@ -80,9 +81,18 @@ var education = {
         "degree": "High School Diploma",
         "dates": "2006-2010",
         "url": "http://www.bullittschools.org/1/Home",
-        "major": "High School Diploma"
-    }]
-};
+        "major": "Required"
+    }],   
+},
+  "onlineCourses":[
+     {
+        "title": "JavaScript Basics",
+        "school": "Udacity",
+        "dates": 2016,
+        "url": "http://www.udacity.com"
+    }
+   ]
+  }; 
 
 education.display = function() {
     for (school in education.schools) {
@@ -102,6 +112,7 @@ education.display = function() {
 
         var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
         $(".education-entry:last").append(formattedMajor);
+
     }
 };
 
