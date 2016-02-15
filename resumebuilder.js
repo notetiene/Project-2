@@ -75,23 +75,21 @@ var formattedbioLocation = HTMLlocation.replace("%data%", bio.contacts.location)
 $("#footerContacts").append(formattedbioLocation);
 
 var education = {
-        "schools": [{
-            "name": "Bullitt Central High School",
-            "location": "Shepherdsville, KY",
-            "degree": "High School Diploma",
-            "dates": "2006-2010",
-            "url": "http://www.bullittschools.org/1/Home",
-            "major": "Required"
-        }],
-    },
+    "schools": [{
+        "name": "Bullitt Central High School",
+        "location": "Shepherdsville, KY",
+        "degree": "High School Diploma",
+        "dates": "2006-2010",
+        "url": "http://www.bullittschools.org/1/Home",
+        "major": "Required"
+    }],
     "onlineCourses": [{
-        {
-            "title": "JavaScript Basics",
-            "school": "Udacity",
-            "dates": 2016,
-            "url": "http://www.udacity.com"
-        }]
-    };
+        "title": "JavaScript Basics",
+        "school": "Udacity",
+        "dates": 2016,
+        "url": "http://www.udacity.com"
+    }]
+}
 
 education.display = function() {
     for (school in education.schools) {
