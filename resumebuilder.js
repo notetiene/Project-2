@@ -89,7 +89,7 @@ var education = {
         "dates": 2016,
         "url": "http://www.udacity.com"
     }]
-}
+};
 
 education.display = function() {
     for (school in education.schools) {
