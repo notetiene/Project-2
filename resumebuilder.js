@@ -113,19 +113,20 @@ education.display = function() {
     }
     for (onlinecourse in education.onlineCourses) {
         $("#education").append(HTMLonlineClasses);
+        $("#education").append(HTMLschoolStart);
 
         var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlinecourse].title);
 
         var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlinecourse].school);
 
         var formattedTitleSchool = formattedTitle + formattedSchool;
-        $(".education-entry:last").append(formattedTitleSchool);
+        $(".education-entry:last").prepend(formattedTitleSchool);
 
-        var formattedDate = HTMLonlineDates.replace("%data%", education.onlineCourses[onlinecourse].date);
-        $(".education-entry:last").append(formattedDate);
+        var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlinecourse].dates);
+        $(".education-entry:last").prepend(formattedDates);
 
         var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[onlinecourse].url);
-        $(".education-entry:last").append(formattedUrl);
+        $(".education-entry:last").prepend(formattedUrl);
     }
 };
 
@@ -142,7 +143,7 @@ var work = {
         "employer": "Geek Squad",
         "title": "Data Security CIA",
         "dates": "June 2014 - June 2015",
-        "location": "Brooks, KY",
+        "location": "Brooks, Kentucky",
         "description": "Collect client data, document and store client data."
     }]
 };
