@@ -120,13 +120,13 @@ education.display = function() {
         var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlinecourse].school);
 
         var formattedTitleSchool = formattedTitle + formattedSchool;
-        $(".education-entry:last").prepend(formattedTitleSchool);
+        $(".education-entry:last").append(formattedTitleSchool);
 
         var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlinecourse].dates);
-        $(".education-entry:last").prepend(formattedDates);
+        $(".education-entry:last").append(formattedDates);
 
         var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[onlinecourse].url);
-        $(".education-entry:last").prepend(formattedUrl);
+        $(".education-entry:last").append(formattedUrl);
     }
 };
 
